@@ -35,37 +35,36 @@ sitemap default label="Main Menu"
 		Switch item=Present label="anwesend"  mappings=[ON="On",OFF="off"]
 		Switch item=Bewaesserung label="Bewässerung"  mappings=[ON="On",OFF="off"]
 		Group item=Windows
-	}
-
-	Group item=FritzboxDslStatus label="DSL Status [MAP(network_states.map):%s]" {
-		Frame label="Status" {
-			Text item=FritzboxDslEnable
-			Text item=FritzboxDslStatus
-			Text item=FritzboxUptime
-			Switch item=FritzboxGuestWifi
-		}
-		Frame item=Speedtest_Start label="Verbindung [%1$tH:%1$tM]" {
-			Text item=Speedtest_UpstreamRate
-			Text item=Speedtest_DownstreamRate
-		}
-		Frame label="Verbindung" {
-			Text item=FritzboxDslUpstreamCurrRate
-			Text item=FritzboxDslDownstreamCurrRate
-			Text item=FritzboxDslUpstreamMaxRate
-			Text item=FritzboxDslDownstreamMaxRate
-			Text item=FritzboxDslUpstreamNoiseMargin
-			Text item=FritzboxDslDownstreamNoiseMargin
-			Text item=FritzboxDslUpstreamAttenuation
-			Text item=FritzboxDslDownstreamAttenuation
-		}
-		Frame label="Fehler" {
-			Text item=FritzboxDslFECErrors
-			Text item=FritzboxDslHECErrors
-			Text item=FritzboxDslCRCErrors
-		}
-		Frame label="Auswertung" {
-			Selection item=Chart_From mappings=[HOUR="Stunde", DAY="Tag", WEEK="Woche", MONTH="Monat", YEAR="Jahr", 5YEARS="5 Jahre"]
-			Webview url="/static/custom/grafana/internet.html?fromItem=Chart_From" icon=none height=12
+		Group item=FritzboxDslStatus label="DSL Status [MAP(network_states.map):%s]" {
+			Frame label="Status" {
+				Text item=FritzboxDslEnable
+				Text item=FritzboxDslStatus
+				Text item=FritzboxUptime
+				Switch item=FritzboxGuestWifi
+			}
+			Frame item=Speedtest_Start label="Verbindung [%1$tH:%1$tM]" {
+				Text item=Speedtest_UpstreamRate
+				Text item=Speedtest_DownstreamRate
+			}
+			Frame label="Verbindung" {
+				Text item=FritzboxDslUpstreamCurrRate
+				Text item=FritzboxDslDownstreamCurrRate
+				Text item=FritzboxDslUpstreamMaxRate
+				Text item=FritzboxDslDownstreamMaxRate
+				Text item=FritzboxDslUpstreamNoiseMargin
+				Text item=FritzboxDslDownstreamNoiseMargin
+				Text item=FritzboxDslUpstreamAttenuation
+				Text item=FritzboxDslDownstreamAttenuation
+			}
+			Frame label="Fehler" {
+				Text item=FritzboxDslFECErrors
+				Text item=FritzboxDslHECErrors
+				Text item=FritzboxDslCRCErrors
+			}
+			Frame label="Auswertung" {
+				Selection item=Chart_From mappings=[HOUR="Stunde", DAY="Tag", WEEK="Woche", MONTH="Monat", YEAR="Jahr", 5YEARS="5 Jahre"]
+				Webview url="/static/custom/grafana/internet.html?fromItem=Chart_From" icon=none height=12
+			}
 		}
 	}
 }
