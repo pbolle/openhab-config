@@ -1,0 +1,91 @@
+/*
+Switch 			Pumpe 		"Pumpe" 				 { knx="0/7/1" }
+Switch 			Ventil_Outdoor_kw 	"Sprüher Vorn" 				 { knx="0/7/2" }
+Switch 			Ventil_Outdoor_kno 	"Sprüher Hinten" 				 { knx="0/7/3" }
+Switch 			Ventil_Outdoor_ko 	"Rotor Hinten" 				 { knx="0/7/4" }
+Switch 			Ventil_Outdoor_knw 	"Wasserhahn" 				 { knx="0/7/5" }
+Switch 			Ventil_Outdoor_gw 	"Rotor Vorn" 				 { knx="0/7/6" }
+Switch 			Ventil_Outdoor_go 	"Schuppen" 				 { knx="0/7/7" }
+*/
+
+//  Schuppen , Wasserhahn -> ON
+/*
+rule "Bewässerung reset"
+when 
+	Time cron "0 30 19 * * ?"
+then
+	postUpdate("Pumpe", "OFF" )
+	postUpdate("Ventil_Outdoor_ko", "OFF" )
+	postUpdate("Ventil_Outdoor_knw", "ON" )
+	postUpdate("Ventil_Outdoor_go", "ON" )
+	postUpdate("Ventil_Outdoor_kw", "OFF" )
+	postUpdate("Ventil_Outdoor_kno", "OFF" )
+	postUpdate("Ventil_Outdoor_gw", "OFF" )
+end
+
+rule "Pumpe start"
+when 
+	Time cron "1 30 19 * * ?"
+then
+	postUpdate("Pumpe", "ON" )
+end
+
+
+// Rotor Hinten
+rule "Rotor Hinten und Rotor Vorn"
+when 
+	Time cron "0 45 19 * * ?"
+then
+	postUpdate("Ventil_Outdoor_ko", "ON" )
+	postUpdate("Ventil_Outdoor_gw", "ON" )
+	postUpdate("Ventil_Outdoor_knw", "OFF" )
+	postUpdate("Ventil_Outdoor_go", "OFF" )
+	postUpdate("Ventil_Outdoor_kw", "OFF" )
+	postUpdate("Ventil_Outdoor_kno", "OFF" )
+end
+
+rule "Rotor Hinten und Wasserhahn"
+when 
+	Time cron "0 10 20 * * ?"
+then
+	postUpdate("Ventil_Outdoor_ko", "ON" )
+	postUpdate("Ventil_Outdoor_knw", "ON" )
+	postUpdate("Ventil_Outdoor_gw", "OFF" )
+	postUpdate("Ventil_Outdoor_go", "OFF" )
+	postUpdate("Ventil_Outdoor_kw", "OFF" )
+	postUpdate("Ventil_Outdoor_kno", "OFF" )
+end
+
+rule "Sprüher vorn"
+when 
+	Time cron "0 0 21 * * ?"
+then
+	postUpdate("Ventil_Outdoor_kw", "ON" )
+	postUpdate("Ventil_Outdoor_ko", "OFF" )
+	postUpdate("Ventil_Outdoor_gw", "OFF" )
+	postUpdate("Ventil_Outdoor_knw", "OFF" )
+end
+
+rule "Sprüher Hinten"
+when 
+	Time cron "0 15 21 * * ?"
+then
+	postUpdate("Ventil_Outdoor_kno", "ON" )
+	postUpdate("Ventil_Outdoor_kw", "OFF" )
+end
+
+rule "Pumpe aus"
+when 
+	Time cron "0 30 21 * * ?"
+then
+	postUpdate("Pumpe", "OFF" )
+end
+
+rule "Pumpe aus"
+when 
+	Time cron "5 55 21 * * ?"
+then
+	postUpdate("Pumpe", "OFF" )
+end
+
+*/

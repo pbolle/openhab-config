@@ -1,198 +1,195 @@
-//####### Lights ########
-Group:Switch:OR(ON, OFF) Lights 				"Alle"							<selflight> ["Light"] { synonyms="Lampe,Lampen" }
-Group:Switch:OR(ON, OFF) Lights_Indoor 			"Innen"							<selflight> ["Light"] { synonyms="Lampe,Lampen" }                                 
-Group:Switch:OR(ON, OFF) Lights_FF 				"EG" 							<selflight>	["Light"] { synonyms="Lampe,Lampen" }
-Group:Switch:OR(ON, OFF) Lights_SF 				"OG" 							<selflight>	["Light"] { synonyms="Lampe,Lampen" }
-Group:Switch:OR(ON, OFF) Lights_Outdoor 		"Aussen" 						<selflight>	["Light"] { synonyms="Lampe,Lampen" }
+Group All
+Group gGF 		(All)
+Group gFF 		(All)
+Group garden 	(All)
+Group garden_light "Licht" 	<slider> (garden)
+Group shelter_light "Schuppen" 	<slider> (garden)
+Group garden_water 	"Wasser" <bath> (garden)
+Group garden_door 	"Tor" <shield> (garden)
+Group Koubachi "koubachi" 	<garden> (garden)
+Group Weather 	(All)
+Group Phone 	(All)
+Group Heatpump (All)
 
-Switch Light_FF_Floor_Ceiling 					"Flur Decke" 					<selflight>	(Lights,Lights_Indoor,Lights_FF,FF_Floor)	{ channel="knx:device:bridge:lights_ff:floorCeiling" }
-Switch Light_FF_Floor_Mirror 					"Flur Spiegel" 					<selflight>	(Lights,Lights_Indoor,Lights_FF,FF_Floor)	{ channel="knx:device:bridge:lights_ff:floorMirror" }
-Dimmer Light_FF_Floor_Hue_Brightness			"Flur Treppe"				    <selflight>	(Lights,Lights_Indoor,Lights_FF,FF_Floor)	["Setpoint"]	{ channel="hue:0210:default:lamp4:color" }
-Color Light_FF_Floor_Hue_Color					"Flur Treppen Farbe"			<colorwheel>	                                     ["ColorTemperature"] { channel="hue:0210:default:lamp4:color"}
+Group PersistentHistory
+Group PersistentSnapshot
+Group PersistentChart
 
-Group:Dimmer:AVG Lights_FF_Livingroom_Ceiling   "Wohnzimmer Decken"			    <selflight>                                                  
-Dimmer Light_FF_Livingroom_Diningtable          "Wohnzimmer Esstisch"           <selflight> (Lights,Lights_Indoor,Lights_FF,FF_Livingroom,Lights_FF_Livingroom_Ceiling) ["Setpoint"] { channel="knx:device:bridge:lights_ff:livingroomDiningtable" }
-Dimmer Light_FF_Livingroom_Couch                "Wohnzimmer Couch" 	            <selflight> (Lights,Lights_Indoor,Lights_FF,FF_Livingroom,Lights_FF_Livingroom_Ceiling) ["Setpoint"] { channel="knx:device:bridge:lights_ff:livingroomCouch" }
+Group GF_AZ 		"Arbeitszimmer" 		<office> 		(gGF)
+Group GF_HWR 		"HWR" 					<bath> 			(gGF)
+Group GF_DIELE 		"Diele" 				<corridor> 		(gGF)
+Group GF_WC 		"WC" 					<bath>	 		(gGF)
+Group GF_KUECHE 	"Küche" 				<kitchen> 		(gGF)
+Group GF_WZ 		"Wohnzimmer" 			<video> 		(gGF)
 
-Group:Dimmer:AVG Light_FF_Livingroom_Hue_Brightness		"Wohnzimmer Indirekt"   <selflight>    
-Color Light_FF_Livingroom_Hue_Color				"Wohnzimmer Indirekte Farbe"	<colorwheel>
 
-Dimmer Light_FF_Livingroom_Hue_Brightness1		"Wohnzimmer Bassbox"		    <selflight>	(Lights,Lights_Indoor,Lights_FF,FF_Livingroom,Light_FF_Livingroom_Hue_Brightness) ["Setpoint"] { channel="hue:0210:default:lamp1:color"}
-Color Light_FF_Livingroom_Hue_Color1			"Wohnzimmer Bassbox Farbe"		<colorwheel>	{ channel="hue:0210:default:lamp1:color"}
-Dimmer Light_FF_Livingroom_Hue_Brightness2		"Wohnzimmer Stehlampe unten"	<selflight>	(Lights,Lights_Indoor,Lights_FF,FF_Livingroom,Light_FF_Livingroom_Hue_Brightness) ["Setpoint"] { channel="hue:0210:default:lamp2:color"}
-Color Light_FF_Livingroom_Hue_Color2			"Wohnzimmer Stehlampe Farbe unten" <colorwheel>	{ channel="hue:0210:default:lamp2:color"}
-Dimmer Light_FF_Livingroom_Hue_Brightness3		"Wohnzimmer Stehlampe oben"		<selflight>	(Lights,Lights_Indoor,Lights_FF,FF_Livingroom,Light_FF_Livingroom_Hue_Brightness) ["Setpoint"] { channel="hue:0210:default:lamp3:color"}
-Color Light_FF_Livingroom_Hue_Color3			"Wohnzimmer Stehlampe Farbe oben" <colorwheel>	{ channel="hue:0210:default:lamp3:color"}
-Dimmer Light_FF_Livingroom_Hue_Brightness5		"Wohnzimmer Regal"				<selflight>	(Lights,Lights_Indoor,Lights_FF,FF_Livingroom,Light_FF_Livingroom_Hue_Brightness) ["Setpoint"] { channel="hue:0210:default:strip1:color"}
-Color Light_FF_Livingroom_Hue_Color5			"Wohnzimmer Regal Farbe"		<colorwheel>	{ channel="hue:0210:default:strip1:color"}
-Dimmer Light_FF_Livingroom_Hue_Brightness4		"Wohnzimmer Tresen"				<selflight>	(Lights,Lights_Indoor,Lights_FF,FF_Livingroom,Light_FF_Livingroom_Hue_Brightness) ["Setpoint"] { channel="hue:0210:default:strip2:color"}
-Color Light_FF_Livingroom_Hue_Color4			"Wohnzimmer Tresen Farbe"		<colorwheel>	{ channel="hue:0210:default:strip2:color"}
+Group FF_DIELE 		"Diele" 				<corridor> 		(gFF)
+Group FF_BED 		"Schlafzimmer" 			<bedroom> 		(gFF)
+Group FF_AK 		"Abstellkammer" 		<boy1> 			(gFF)
+Group FF_KZ 		"Kinderzimmer" 			<boy1> 			(gFF)
+Group FF_BAD 		"Bad" 					<bath> 			(gFF)
 
-Dimmer Light_FF_Kitchen_Ceiling 				"Küche Decke" 	<selflight> (Lights,Lights_Indoor,Lights_FF,FF_Kitchen)	["Setpoint"]	{ channel="knx:device:bridge:lights_ff:kitchenCeiling" }
-Switch Light_FF_Kitchen_Cupboard 				"Küche Schrank" <selflight>	(Lights,Lights_Indoor,Lights_FF,FF_Kitchen)	{ channel="knx:device:bridge:lights_ff:kitchenCupboard" }
-Switch Light_FF_Boxroom_Ceiling 				"Kammer Decke" 		<selflight>		(Lights,Lights_Indoor,Lights_FF,FF_Boxroom)	{ channel="knx:device:bridge:lights_ff:boxroomCeiling" }
-Switch Light_FF_Utilityroom_Ceiling 			"HWR Decke" 		<selflight>		(Lights,Lights_Indoor,Lights_FF,FF_Utilityroom) { channel="knx:device:bridge:lights_ff:utilityroomCeiling" }
-Switch Light_FF_Guestroom_Ceiling 				"Gästezimmer Decke" <selflight>		(Lights,Lights_Indoor,Lights_FF,FF_Guestroom)	{ channel="knx:device:bridge:lights_ff:guestroomCeiling" }
-Switch Light_FF_GuestWC_Ceiling 				"Gäste WC Decke" 	<selflight>		(Lights,Lights_Indoor,Lights_FF,FF_GuestWC)	{ channel="knx:device:bridge:lights_ff:guestWCCeiling" }
-Switch Light_FF_GuestWC_Mirror 					"Gäste WC Spiegel" <selflight>		(Lights,Lights_Indoor,Lights_FF,FF_GuestWC)	{ channel="knx:device:bridge:lights_ff:guestWCMirror" }
-Switch Light_FF_Garage 							"Schuppen" 	<selflight>		(Lights,Lights_Indoor,Lights_FF,FF_Garage)	{ channel="knx:device:bridge:lights_ff:garage" }
 
-Switch Light_SF_Floor_Ceiling 					"Flur oben Decke" 	<selflight>		(Lights,Lights_Indoor,Lights_SF,SF_Floor)	{ channel="knx:device:bridge:lights_sf:floorCeiling" }
-Switch Light_SF_Bedroom_Ceiling 				"Schlafzimmer Decke" <selflight>		(Lights,Lights_Indoor,Lights_SF,SF_Bedroom)	{ channel="knx:device:bridge:lights_sf:bedroomCeiling" }
 
-Dimmer Light_SF_Bedroom_Left_Hue_Brightness		"Schlafzimmer Nachttisch links"		<selflight>	(Lights,Lights_Indoor,Lights_SF,SF_Bedroom) { channel="hue:0210:default:lamp5:color"}
-Color Light_SF_Bedroom_Left_Hue_Color			"Schlafzimmer Nachttisch links Farbe"	<colorwheel>	{ channel="hue:0210:default:lamp5:color"}
-Dimmer Light_SF_Bedroom_Right_Hue_Brightness	"Schlafzimmer Nachttisch rechts"	<selflight>	(Lights,Lights_Indoor,Lights_SF,SF_Bedroom) { channel="hue:0210:default:lamp6:color"}
-Color Light_SF_Bedroom_Right_Hue_Color			"Schlafzimmer Nachttisch rechts Farbe"	<colorwheel>	{ channel="hue:0210:default:lamp6:color"}
 
-Switch Light_SF_Bedroom_Left 					"Schlafzimmer Nachttisch links" 	{ channel="knx:device:bridge:other:bedroomLeft" }
-Switch Light_SF_Bedroom_Left_Long_Pressed 		"Schlafz. Bett Fenster (lang)" 		{ channel="knx:device:bridge:other:bedroomLeftLongPressed" }
-Switch Light_SF_Bedroom_Right 					"Schlafzimmer Nachttisch rechts" 	{ channel="knx:device:bridge:other:bedroomRight" }
-Switch Light_SF_Bedroom_Right_Long_Pressed		"Schlafz. Bett Wand (lang)" 		{ channel="knx:device:bridge:other:bedroomRightLongPressed" }
+/* active groups */
+Group:Contact:OR(OPEN, CLOSED) 	Windows 	"Open windows [(%d)]"				<contact>		(All)
+DateTime Sicherheit_Letzte_Aenderung "letzte Bewegung" 
 
-Switch Light_SF_Dressingroom_Ceiling			"Ankleide Decke" 	<selflight>	(Lights,Lights_Indoor,Lights_SF,SF_Dressingroom) { channel="knx:device:bridge:lights_sf:dressingroomCeiling" }
-Switch Light_SF_Child1_Ceiling 					"Kinderzimmer eins" <selflight>	(Lights,Lights_Indoor,Lights_SF,SF_Child1)	{ channel="knx:device:bridge:lights_sf:child1Ceiling" }
-Switch Light_SF_Child2_Ceiling 					"Kinderzimmer zwei" <selflight>	(Lights,Lights_Indoor,Lights_SF,SF_Child2)	{ channel="knx:device:bridge:lights_sf:child2Ceiling" }
-Switch Light_SF_Bathroom_Ceiling 				"Badezimmer Decke" 	<selflight>	(Lights,Lights_Indoor,Lights_SF,SF_Bathroom) { channel="knx:device:bridge:lights_sf:bathroomCeiling" }
-Switch Light_SF_Bathroom_Mirror 		"Badezimmer Spiegel"	<selflight>		(Lights,Lights_Indoor,Lights_SF,SF_Bathroom) { channel="knx:device:bridge:lights_sf:bathroomMirror" }
-Switch Light_SF_Attic 							"Dachboden" 	<selflight>		(Lights,Lights_Indoor,Lights_SF,SF_Attic)	{ channel="knx:device:bridge:lights_sf:attic" }
+/* Untergeschoss */
+Switch 			Present 		    "present" 		<present>		 { channel="knx:device:bridge:other:Present" }
+Switch 			Bewaesserung 		"bewaeserung" 		<bath>
 
-Dimmer Light_Outdoor_Terrace 					"Terrasse"	<selflight>	        (Lights_Outdoor,Outdoor)	{ channel="knx:device:bridge:lights_outdoor:outdoorTerrace" }
-Switch Light_Outdoor_Frontdoor 					"Haustür"	<selflight>		    (Lights_Outdoor,Outdoor)	{ channel="knx:device:bridge:lights_outdoor:frontdoor" }
-Switch Light_Outdoor_Carport 					"Carport"	<selflight>		    (Lights_Outdoor,Outdoor)	{ channel="knx:device:bridge:lights_outdoor:carport" }
-Switch Light_Outdoor_Garage_Streedside 		"Schuppentür vorne"	<selflight>		(Lights_Outdoor,Outdoor) { channel="knx:device:bridge:lights_outdoor:garageStreedside" }
-Switch Light_Outdoor_Garage_Gardenside 		"Schuppentür hinten"	<selflight>	(Lights_Outdoor,Outdoor) { channel="knx:device:bridge:lights_outdoor:garageGardenside" }
+Switch 			Light_GF_HWR 		"Licht HWR" 				(GF_HWR) { channel="knx:device:bridge:lights_ff:HWR" }
+Rollershutter 	Shutter_GF_HWR 		"Rollo HWR" 				(GF_HWR) { channel="knx:device:bridge:shutter_ff:HWR" }
 
-//####### Sockets ########
-Group:Switch:OR(ON, OFF) Sockets 			"Alle"							<selfsocket> ["PowerOutlet"]
-Group:Switch:OR(ON, OFF) Sockets_Outdoor	"Garten"						<selfsocket>
+Switch 			Light_GF_WC 		"WC" 					(GF_WC) { channel="knx:device:bridge:lights_ff:WC" }
+Switch 			LightSpiegel_GF_WC 	"WC Spiegel" 			(GF_WC) { channel="knx:device:bridge:lights_ff:WC_Spiegel" }
+Rollershutter 	Shutter_GF_WC 		"WC" 					(GF_WC) { channel="knx:device:bridge:shutter_ff:WC" }
 
-Switch Socket_Livingroom_Bassbox	"Wohnzimmer Bassbox" <selfsocket>       (Sockets,FF_Livingroom) ["Switch","Speaker"] { channel="knx:device:bridge:sockets_ff:livingroomBassbox" }
-Switch Socket_Livingroom_Couch  	"Wohnzimmer Stehlampe"	<selfsocket>    (Sockets,FF_Livingroom) ["Switch"] { channel="knx:device:bridge:sockets_ff:livingroomCouch" }
-Switch Socket_Livingroom_Fireplace	"Wohnzimmer Kamin"    	<selfsocket>    (Sockets,FF_Livingroom) ["Switch"] { channel="knx:device:bridge:sockets_ff:livingroomFireplace" }
-Switch Socket_Floor 				"Flur"			<selfsocket>	        (Sockets,FF_Floor) ["Switch"]	   { channel="knx:device:bridge:sockets_ff:floor" }
-Switch Socket_GuestWC 				"WC Radio"				<selfsocket>	(Sockets,FF_GuestWC) ["Switch"]	   { channel="knx:device:bridge:sockets_ff:guestWC" }
-Switch Socket_Bathroom_Left			"Badezimmer links"		<selfsocket>	(Sockets,SF_Bathroom) ["Switch"]   { channel="knx:device:bridge:sockets_sf:bathroomLeft" }
-Switch Socket_Bathroom_Right		"Badezimmer rechts"		<selfsocket>	(Sockets,SF_Bathroom) ["Switch"]   { channel="knx:device:bridge:sockets_sf:bathroomRight" }
-Switch Socket_Attic					"Dachboden"	<selfsocket>	            (Sockets,SF_Attic,Sockets) ["Switch"] { channel="knx:device:bridge:sockets_sf:attic" }
-Switch Socket_Streedside			"Aussen vorne" <selfsocket>	            (Sockets,Sockets_Outdoor,Outdoor) ["Switch"] { channel="knx:device:bridge:sockets_outdoor:streedside" }
-Switch Socket_Gardenside			"Aussen hinten" <selfsocket>	        (Sockets,Sockets_Outdoor,Outdoor) ["Switch"] { channel="knx:device:bridge:sockets_outdoor:gardenside" }
-Switch Socket_Mobile_1				"Mobile 1" <selfsocket>	                (Sockets) ["Switch"]					         { channel="hue:0010:default:socket1:switch" }
-Switch Socket_Mobile_2				"Mobile 2" <selfsocket>	                (Sockets) ["Switch"]					         { channel="hue:0010:default:socket2:switch" }
+Switch 			Light_GF_KUECHE 		"Küche" 			(GF_KUECHE) { channel="knx:device:bridge:lights_ff:Kueche" }
+Rollershutter 	Shutter1_GF_KUECHE 		"Küchetür" 		(GF_KUECHE) { channel="knx:device:bridge:shutter_ff:Kuechentuer" }
+Rollershutter 	Shutter2_GF_KUECHE 		"Küchefenster" 	(GF_KUECHE) { channel="knx:device:bridge:shutter_ff:Kuechenfenster" }
 
-//####### Shutters ########
-Group:Switch:OR(OFF,ON)	_Shutters	"Alle" <selfrollershutter>
-Group:Switch:OR(OFF,ON)	_Shutters_FF	"EG" 	 <selfrollershutter>
-Group:Switch:OR(OFF,ON)	_Shutters_SF	"OG" 	 <selfrollershutter>
+Switch 			Light1_GF_WZ 		"Esszimmer" 			(GF_WZ) { channel="knx:device:bridge:lights_ff:EZ" }
+Dimmer 			Dimmer1_GF_WZ 		"Esszimmer [%d]" 		(GF_WZ) { channel="knx:device:bridge:lights_ff:EZ" }
+Switch 			Light2_GF_WZ 		"Wohnzimmer" 			(GF_WZ) { channel="knx:device:bridge:lights_ff:WZ" }
+Dimmer 			Dimmer2_GF_WZ 		"Wohnzimmer [%d]" 		(GF_WZ) { channel="knx:device:bridge:lights_ff:WZ" }
+Switch 			Light3_GF_WZ 		"kleines Licht" 			(GF_WZ) { channel="knx:device:bridge:sockets_ff:WZ_small" }
+Rollershutter 	Shutter1_GF_WZ 		"Esszimmer" 			(GF_WZ) { channel="knx:device:bridge:shutter_ff:Esszimmer" }
+Rollershutter 	Shutter2_GF_WZ 		"Wohnzimmertür" 		(GF_WZ) { channel="knx:device:bridge:shutter_ff:Wohnzimmertuer" }
+Rollershutter 	Shutter3_GF_WZ 		"Wohnzimmer" 			(GF_WZ) { channel="knx:device:bridge:shutter_ff:Wohnzimmer" }
+Switch 			 MotionSensor_GF_WZ 		"Bewegungsmelder WZ" 	<lock>	(GF_WZ) { channel="knx:device:bridge:motionsensor_ff:WZ" }
 
-Group:Rollershutter:OR(UP, DOWN)	Shutters	"Alle" <selfrollershutter> ["Blinds"]
-Group:Rollershutter:OR(UP, DOWN)	Shutters_FF	"EG" 	 <selfrollershutter> ["Blinds"]
-Group:Rollershutter:OR(UP, DOWN)	Shutters_SF	"OG" 	 <selfrollershutter> ["Blinds"]
-Group:Rollershutter:OR(UP, DOWN)	Shutters_SOUTH	"Süden" <selfrollershutter>
-Group:Rollershutter:OR(UP, DOWN)	Shutters_WEST	"Westen" <selfrollershutter>
+/* Arbitszimmer */
+Switch 			Light_GF_AZ 		"Licht" 		(GF_AZ) { channel="knx:device:bridge:lights_ff:AZ" }
+Dimmer 			Dimmer_GF_AZ 		"Licht [%d]" 		(GF_AZ) { channel="knx:device:bridge:lights_ff:AZ" }
+Rollershutter 	Shutter1_GF_AZ 		"Rollo" 		(GF_AZ) { channel="knx:device:bridge:shutter_ff:AZ_fenster" }
+Rollershutter 	Shutter2_GF_AZ 		"Rollotür" 	(GF_AZ) { channel="knx:device:bridge:shutter_ff:AZ_tuer" }
 
-Rollershutter Shutters_FF_Livingroom_Terrace "Terasse" <selfrollershutter> (Shutters,Shutters_FF,_Shutters,_Shutters_FF,Shutters_WEST,FF_Livingroom) ["Blinds"] { channel="knx:device:bridge:shutter_ff:livingroomTerrace" }
-Rollershutter Shutters_FF_Livingroom_Couch "Couch" <selfrollershutter> (Shutters,Shutters_FF,_Shutters,_Shutters_FF,Shutters_WEST,FF_Livingroom) ["Blinds"] { channel="knx:device:bridge:shutter_ff:livingroomCouch" }
-Rollershutter Shutters_FF_Kitchen "Küche"  <selfrollershutter> (Shutters,Shutters_FF,_Shutters,_Shutters_FF,Shutters_WEST,FF_Kitchen) ["Blinds"] { channel="knx:device:bridge:shutter_ff:kitchen" }
-Rollershutter Shutters_FF_Guestroom "Gästezimmer"  <selfrollershutter> (Shutters,Shutters_FF,_Shutters,_Shutters_FF,FF_Guestroom) ["Blinds"] { channel="knx:device:bridge:shutter_ff:guestroom" }
-Rollershutter Shutters_FF_GuestWC "Gäste WC" <selfrollershutter> (Shutters,Shutters_FF,_Shutters,_Shutters_FF,FF_GuestWC) ["Blinds"] { channel="knx:device:bridge:shutter_ff:guestWC" }
+/* Diele */
+Switch 			Light1_GF_DIELE 		"Diele" 			(GF_DIELE) { channel="knx:device:bridge:lights_ff:Diele" }
+Dimmer 			Dimmer1_GF_DIELE 		"Diele [%d]" 		(GF_DIELE) { channel="knx:device:bridge:lights_ff:Diele" }
+Switch 			Light2_GF_DIELE 		"Gadrobe" 		(GF_DIELE) { channel="knx:device:bridge:lights_ff:Gadrobe" }
+Rollershutter 	Shutter_GF_DIELE 		"Rollo Gadrobe" 		(GF_DIELE) { channel="knx:device:bridge:shutter_ff:Gadrobe" }
+Switch 			MotionSensor_GF_DIELE 		"Bewegungsmelder Diele" <lock>	(GF_DIELE) { channel="knx:device:bridge:motionsensor_ff:Diele" }
 
-Rollershutter Shutters_SF_Bedroom "Schlafzimmer" 	<selfrollershutter> (Shutters,Shutters_SF,_Shutters,_Shutters_SF,Shutters_WEST,SF_Bedroom) ["Blinds"] { channel="knx:device:bridge:shutter_sf:bedroom" }
-Rollershutter Shutters_SF_Dressingroom "Ankleide"  <selfrollershutter>	(Shutters,Shutters_SF,_Shutters,_Shutters_SF,Shutters_SOUTH,SF_Dressingroom) ["Blinds"] { channel="knx:device:bridge:shutter_sf:dressingroom" }
-Rollershutter Shutters_SF_Child1 "Kindzimmer 1"  <selfrollershutter> (Shutters,Shutters_SF,_Shutters,_Shutters_SF,SF_Child1) ["Blinds"] { channel="knx:device:bridge:shutter_sf:child1" }
-Rollershutter Shutters_SF_Child2 "Kindzimmer 2"  <selfrollershutter> (Shutters,Shutters_SF,_Shutters,_Shutters_SF,SF_Child2) ["Blinds"] { channel="knx:device:bridge:shutter_sf:child2" }
-Rollershutter Shutters_SF_Bathroom "Badezimmer" <selfrollershutter> (Shutters,Shutters_SF,_Shutters,_Shutters_SF,Shutters_SOUTH,SF_Bathroom) ["Blinds"] { channel="knx:device:bridge:shutter_sf:bathroom" }
-Rollershutter Shutters_SF_Attic "Dachboden" <selfrollershutter> (Shutters,Shutters_SF,_Shutters,_Shutters_SF,Shutters_SOUTH,SF_Attic) ["Blinds"] { channel="knx:device:bridge:shutter_sf:attic" }
+/* Obergeschoss */
+Switch 			Light1_FF_DIELE 		"Diele" 		(FF_DIELE) { channel="knx:device:bridge:lights_sf:Diele" }
+Switch 			Light2_FF_DIELE 		"Kammer" 		(FF_DIELE) { channel="knx:device:bridge:lights_sf:Kammer" }
+Switch 			Light3_FF_DIELE 		"Notlicht" 		(FF_DIELE) { channel="knx:device:bridge:lights_sf:Notlicht" }
 
-//####### CONTACTS ########
-Group:Contact:OR(OPEN, CLOSED)	Security 		"Sicherheit [%d]"						<shield>
-Group:Contact:OR(OPEN, CLOSED)	Openingcontacts	"Öffnungssensoren [%d]"					<shield>
+/* bad */
+Switch 			Light_FF_BAD 		"Bad" 				(FF_BAD) { channel="knx:device:bridge:lights_sf:Bad" }
+Dimmer 			Dimmer_FF_BAD 		"Bad [%d]" 		(FF_BAD) { channel="knx:device:bridge:lights_sf:Bad" }
+Switch 			Heating_FF_BAD 		"Heizung" <heating>		(FF_BAD) { channel="knx:device:bridge:other:Heating_FF_Bad" }
+Rollershutter 	Shutter_FF_BAD 		"Bad" 				(FF_BAD) { channel="knx:device:bridge:shutter_sf:Bad" }
 
-DateTime Security_Last_Change	    "Sicherheit [%1$tH:%1$tM:%1$tS, %1$td.%1$tm]"	<selfCalendar>	(Security)
+/* Abstellkammer */
+Switch 			Light_FF_AK 		"Abstellkammer" 		(FF_AK) { channel="knx:device:bridge:lights_sf:AK" }
+Dimmer 			Dimmer_FF_AK 		"Abstellkammer [%d]" 		(FF_AK) { channel="knx:device:bridge:lights_sf:AK" }
+Rollershutter 	Shutter_FF_AK 		"Abstellkammer" 		(FF_AK) { channel="knx:device:bridge:shutter_sf:Abstellkammer" }
+Switch 			Repeater_FF_AK 		"Repeater" 		(FF_AK) { channel="knx:device:bridge:sockets_sf:Repeater" }
 
-Switch State_Notify				    "Benachrichtigen"		<selfshield> 	(Security) 							{ channel="knx:device:bridge:other:stateNotify" }
-Switch State_Holiday			    "Urlaubsmodus" 		<selfshield> 	(Security) 							{ channel="knx:device:bridge:other:stateHoliday" }
+/* Eltern */
+Switch 			Light1_FF_BED 		"Ankleidezimmer" 		(FF_BED) { channel="knx:device:bridge:lights_sf:Ankleidezimmer" }
+Switch 			Light2_FF_BED 		"Schlafzimmer" 		(FF_BED) { channel="knx:device:bridge:lights_sf:Schlafzimmer" }
+Dimmer 			Dimmer2_FF_BED 		"Schlafzimmer [%d]" 		(FF_BED) { channel="knx:device:bridge:lights_sf:Schlafzimmer" }
+Rollershutter 	Shutter1_FF_BED 	"Schlafzimmer" 		(FF_BED) { channel="knx:device:bridge:shutter_sf:Schlafzimmer" }
+Rollershutter 	Shutter2_FF_BED 	"Ankleidezimmer" 		(FF_BED) { channel="knx:device:bridge:shutter_sf:Ankleidezimmer" }
 
-Group:Contact:OR(OPEN, CLOSED) 	Sensor_Outdoor	"Aussen [%d]"			<selfmotion>	(Security) ["MotionDetector"]
-Group:Contact:OR(OPEN, CLOSED) 	Sensor_Indoor	"EG [%d]"				<selfmotion>	(Security) ["MotionDetector"]
-Group:Contact:OR(OPEN, CLOSED) 	Sensor_Doors_FF	"EG Türen [%d]"							<selfdoor>			(Security,Openingcontacts) ["Door","Sensor","OpenState"]
-Group:Contact:OR(OPEN, CLOSED) 	Sensor_Window_FF	"EG Fenster [%d]"					<selfwindow>		(Security,Openingcontacts) ["Window","Sensor","OpenState"]
-Group:Contact:OR(OPEN, CLOSED) 	Sensor_Window_SF	"OG Fenster [%d]"					<selfwindow>		(Security,Openingcontacts) ["Window","Sensor","OpenState"]
+/* kind */
+Switch 			Light_FF_KZ 		"Kind" 				(FF_KZ) { channel="knx:device:bridge:lights_sf:Kind" }
+Dimmer 			Dimmer_FF_KZ 		"Kind [%d]" 				(FF_KZ) { channel="knx:device:bridge:lights_sf:Kind" }
+Rollershutter 	Shutter_FF_KZ 		"Kind" 				(FF_KZ) { channel="knx:device:bridge:shutter_sf:Kind" }
 
-Contact Door_FF_Floor 	"Haustür [MAP(de.map):%s]"             <selfdoor> (FF_Floor,Sensor_Doors_FF) ["FrontDoor"] { channel="knx:device:bridge:contacts_door:main" }
-Contact Door_FF_Garage1 "Schuppentür Strasse [MAP(de.map):%s]" <selfdoor> (FF_Garage,Sensor_Doors_FF) ["GarageDoor"] { channel="knx:device:bridge:contacts_door:garageStreedside" }
-Contact Door_FF_Garage2 "Schuppentür Garten [MAP(de.map):%s]"  <selfdoor> (FF_Garage,Sensor_Doors_FF) ["GarageDoor"] { channel="knx:device:bridge:contacts_door:garageGardenside" }
+/* Garten */
+Switch 			LightS_Outdoor 			"Terrasselicht S" 	<outdoorlight>	(garden_light) { channel="knx:device:bridge:lights_outdoor:S" }
+Switch 			LightN_Outdoor 			"Hauseingangslicht" 	(garden_light) { channel="knx:device:bridge:lights_outdoor:N" }
+Switch 			LightW_Outdoor 			"Hauslicht W" 	<outdoorlight>		(garden_light) { channel="knx:device:bridge:lights_outdoor:W" }
+Switch 			Light_Outdoor_lane 		"Licht Weg" 				(garden_light) { channel="knx:device:bridge:lights_outdoor:Lane" }
+Switch 			LightO_Outdoor 			"Terrasselicht O" 		(garden_light) { channel="knx:device:bridge:lights_outdoor:Terrasse" }
+Switch 			LightS_Outdoor_screen 	"Sichtschutz S" 		(garden_light) { channel="knx:device:bridge:lights_outdoor:Sichtschutz" }
 
-Contact Window_FF_Livingroom_Terrace "Terasse [MAP(de.map):%s]" 	<selfwindow> (FF_Livingroom,Sensor_Window_FF) { channel="knx:device:bridge:contacts_window_ff:livingroomTerrace" }
-Contact Window_FF_Livingroom_Couch   "Couch [MAP(de.map):%s]"		<selfwindow> (FF_Livingroom,Sensor_Window_FF)	{ channel="knx:device:bridge:contacts_window_ff:livingroomCouch" }
-Contact Window_FF_Kitchen 			 "Küche [MAP(de.map):%s]"		<selfwindow> (FF_Kitchen,Sensor_Window_FF)		{ channel="knx:device:bridge:contacts_window_ff:kitchen" }
-Contact Window_FF_Guestroom			 "Gästezimmer [MAP(de.map):%s]"	<selfwindow> (FF_Guestroom,Sensor_Window_FF)		{ channel="knx:device:bridge:contacts_window_ff:guestroom" }
-Contact Window_FF_GuestWC 			 "Gäste WC [MAP(de.map):%s]"	<selfwindow> (FF_GuestWC, Sensor_Window_FF)		{ channel="knx:device:bridge:contacts_window_ff:guestWC" }
-Contact Window_FF_Garage 			 "Schuppenfenster [MAP(de.map):%s]" <selfwindow> (FF_Garage, Sensor_Window_FF)	{ channel="knx:device:bridge:contacts_window_ff:garage" }
+Switch 			Light_shelter_in_front 	"Werkstatt innen" 		(shelter_light) { channel="knx:device:bridge:lights_outdoor:Werkstatt_in_front" }
+Switch 			Light_shelter_out_front 	"Werkstatt außen" 		(shelter_light) { channel="knx:device:bridge:lights_outdoor:Werkstatt_out_front" }
+Switch 			Light_shelter_in_side 	"Geräte innen" 		(shelter_light) { channel="knx:device:bridge:lights_outdoor:Werkstatt_in_side" }
+Switch 			Light_shelter_out_side 	"Geräte außen" 		(shelter_light) { channel="knx:device:bridge:lights_outdoor:Werkstatt_out_side" }
 
-Contact Window_SF_Bedroom 			 "Schlafzimmer [MAP(de.map):%s]" <selfwindow> (SF_Bedroom,Sensor_Window_SF)		{ channel="knx:device:bridge:contacts_window_sf:bedroom" }
-Contact Window_SF_Dressingroom 		 "Ankleide [MAP(de.map):%s]"	<selfwindow> (SF_Dressingroom,Sensor_Window_SF)	{ channel="knx:device:bridge:contacts_window_sf:dressingroom" }
-Contact Window_SF_Child1 			 "Kind 1 [MAP(de.map):%s]"		<selfwindow> (SF_Child1,Sensor_Window_SF)		{ channel="knx:device:bridge:contacts_window_sf:child1" }
-Contact Window_SF_Child2 			 "Kind 2 [MAP(de.map):%s]"		<selfwindow> (SF_Child2,Sensor_Window_SF)		{ channel="knx:device:bridge:contacts_window_sf:child2" }
-Contact Window_SF_Bathroom 			 "Badezimmer [MAP(de.map):%s]"	<selfwindow> (SF_Bathroom,Sensor_Window_SF)		{ channel="knx:device:bridge:contacts_window_sf:bathroom" }
-Contact Window_SF_Attic 			 "Dachboden [MAP(de.map):%s]"	<selfwindow> (SF_Attic,Sensor_Window_SF)			{ channel="knx:device:bridge:contacts_window_sf:attic" }
 
-//####### MOTIODETECTOR ########
-Switch Motiondetector_Outdoor_Switch "Gartenlicht autom."           <selflightmotion>	(Security)		{ channel="knx:device:bridge:motion_outdoor:main" }
+Switch 			Pumpe 		"Pumpe" 				(garden_water) { channel="knx:device:bridge:water_outdoor:Pumpe" }
 
-Group:Number:SUM 	Motiondetector_Counter 		"Gartenlicht Details. [MAP(motiondetector_counter_de.map):%s]" <selflightInfo>	(Security)
-Switch Motiondetector_Outdoor_Garage_Streetside_Switch	"Schuppen vorne" 				<selflightmotion>	(Motiondetector_Counter)
-Switch Motiondetector_Outdoor_Frontdoor_Switch 	"Haustuer" 						<selflightmotion> 		(Motiondetector_Counter)
-Switch Motiondetector_Outdoor_Carport_Switch 	"Carport"						<selflightmotion> 		(Motiondetector_Counter)
-Switch Motiondetector_Outdoor_Terrace_Switch 	"Terasse"						<selflightmotion> 		(Motiondetector_Counter)
-Switch Motiondetector_Outdoor_Garage_Gardenside_Switch	"Schuppen hinten"				<selflightmotion>	(Motiondetector_Counter)
+Switch 			Ventil_Outdoor_kw 	"Sprüher Vorn" 				(garden_water) { channel="knx:device:bridge:water_outdoor:Sprueher_vorn" }
+Switch 			Ventil_Outdoor_kno 	"Sprüher Hinten" 				(garden_water) { hannel="knx:device:bridge:water_outdoor:Sprueher_hinten" }
+Switch 			Ventil_Outdoor_ko 	"Rotor Hinten" 				(garden_water) { hannel="knx:device:bridge:water_outdoor:Rotor_hinten" }
+Switch 			Ventil_Outdoor_knw 	"Wasserhahn" 				(garden_water) { hannel="knx:device:bridge:water_outdoor:Wasserhahn" }
+Switch 			Ventil_Outdoor_gw 	"Rotor Vorn" 				(garden_water) { hannel="knx:device:bridge:water_outdoor:Rotor_vorn" }
+Switch 			Ventil_Outdoor_go 	"Schuppen" 				(garden_water) { hannel="knx:device:bridge:water_outdoor:Schuppen" }
 
-Contact Motiondetector_Outdoor_Terrace1 "Terasse 1 [MAP(motion_de.map):%s]" <selfmotion> (Outdoor, Sensor_Outdoor) { channel="knx:device:bridge:motion_outdoor:terrace1" }
-Contact Motiondetector_Outdoor_Terrace2 "Terasse 2 [MAP(motion_de.map):%s]" <selfmotion> (Outdoor, Sensor_Outdoor) { channel="knx:device:bridge:motion_outdoor:terrace2" }
-Contact Motiondetector_Outdoor_Frontdoor "Haustür [MAP(motion_de.map):%s]" <selfmotion> (Outdoor, Sensor_Outdoor) { channel="knx:device:bridge:motion_outdoor:frontdoor" }
-Contact Motiondetector_Outdoor_Carport "Carport [MAP(motion_de.map):%s]" <selfmotion> (Outdoor, Sensor_Outdoor) { channel="knx:device:bridge:motion_outdoor:carport" }
-Contact Motiondetector_Outdoor_Garage_Streetside "Schuppen (vorne) [MAP(motion_de.map):%s]" <selfmotion> (Outdoor, Sensor_Outdoor) { channel="knx:device:bridge:motion_outdoor:garageStreetside" }
-Contact Motiondetector_Outdoor_Garage_Gardenside "Schuppen (hinten) [MAP(motion_de.map):%s]" <selfmotion> (Outdoor, Sensor_Outdoor) { channel="knx:device:bridge:motion_outdoor:garageGardenside" }
+Switch 			door_Outdoor_big 	"Großes Tor" 	<lock>			(garden_door) { channel="knx:device:bridge:sockets_outdoor:door_big" }
+Switch 			door_Outdoor_smal 	"Kleines Tor" 	<lock>			(garden_door) { channel="knx:device:bridge:sockets_outdoor:door_smal" }
 
-Contact Motiondetector_FF_Livingroom "Wohnzimmer [MAP(motion_de.map):%s]" <selfmotion> (FF_Livingroom,Sensor_Indoor) { channel="knx:device:bridge:motion_indoor:livingroom" }
-Contact Motiondetector_FF_Floor 	 "Flur unten [MAP(motion_de.map):%s]" <selfmotion> (FF_Floor,Sensor_Indoor)      { channel="knx:device:bridge:motion_indoor:ffFloor" }
-Contact Motiondetector_SF_Floor 	 "Flur oben [MAP(motion_de.map):%s]" <selfmotion> (SF_Floor,Sensor_Indoor)       { channel="knx:device:bridge:motion_indoor:sfFloor" }
+/* Windows */
+Contact Window1_FF 	"Schlafen links [%s]"	(FF_BED,Windows) { channel="knx:device:bridge:contacts_sf:Window1" }
+Contact Window2_FF 	"Schlafen rechts [%s]"	(FF_BED,Windows) { channel="knx:device:bridge:contacts_sf:Window2" }
+Contact Window3_FF 	"Kind links [%s]"	(FF_KZ,Windows) { channel="knx:device:bridge:contacts_sf:Window3" }
+Contact Window4_FF 	"Kind rechts [%s]"	(FF_KZ,Windows) { channel="knx:device:bridge:contacts_sf:Window4" }
+Contact Window5_FF 	"Bad [%s]"		(FF_BAD,Windows) { channel="knx:device:bridge:contacts_sf:Window5" }
+Contact Window6_FF 	"Abstellkammer [%s]"	(FF_AK,Windows) { channel="knx:device:bridge:contacts_sf:Window6" }
+Contact Window7_FF 	"Ankleide rechts [%s]"	(FF_BED,Windows) { channel="knx:device:bridge:contacts_sf:Window7" }
+Contact Window8_FF 	"Ankleide links [%s]"	(FF_BED,Windows) { channel="knx:device:bridge:contacts_sf:Window8" }
+Contact Movecontrol_FF 	"Diele Bewegungsmelder [%s]"	(FF_BED,Windows) { channel="knx:device:bridge:motionsensor_sf:Diele" }
 
-//####### Bell ########
-Contact 	Bell_State 																								 { channel="knx:device:bridge:other:switchBell" }
-DateTime	Bell_Last_Change					"Klingel [%1$tH:%1$tM:%1$tS, %1$td.%1$tm]"	<selfbell> 	(Security)
-Switch 		Dooropener_FF_Floor 				"Türöffner" 							<selfdoor> 		(FF_Floor)	 { channel="knx:device:bridge:other:switchDooropener" }
-Switch 		Dooropener_Timer 					"Türoffner" 							<selfdoor> 		(FF_Floor)
+Contact Window1_GF 	"HWR [%s]"			(GF_HWR,Windows) { channel="knx:device:bridge:contacts_ff:Window1" }
+Contact Window2_GF 	"WC [%s]"			(GF_WC,Windows) { channel="knx:device:bridge:contacts_ff:Window2" }
+Contact Window3_GF 	"Küche [%s]"			(GF_KUECHE,Windows) { channel="knx:device:bridge:contacts_ff:Window3" }
+Contact Window4_GF 	"Küchentür links [%s]"		(GF_KUECHE,Windows) { channel="knx:device:bridge:contacts_ff:Window4" }
+Contact Window5_GF 	"Küchentür rechts [%s]"		(GF_KUECHE,Windows) { channel="knx:device:bridge:contacts_ff:Window5" }
+Contact Window6_GF 	"Wohnzimmer rechts [%s]"	(GF_WZ,Windows) { channel="knx:device:bridge:contacts_ff:Window6" }
+Contact Window7_GF 	"Wohnzimmer links [%s]"		(GF_WZ,Windows) { channel="knx:device:bridge:contacts_ff:Window7" }
+Contact Window8_GF 	"Wohnzimmertür rechts [%s]"	(GF_WZ,Windows) { channel="knx:device:bridge:contacts_ff:Window8" }
+Contact Window9_GF 	"Wohnzimmertür links [%s]"	(GF_WZ,Windows) { channel="knx:device:bridge:contacts_ff:Window9" }
+Contact Window10_GF 	"Arbeitszimmertür [%s]"		(GF_AZ,Windows) { channel="knx:device:bridge:contacts_ff:Window10" }
+Contact Window11_GF 	"Arbeitszimmer [%s]"		(GF_AZ,Windows) { channel="knx:device:bridge:contacts_ff:Window11" }
+Contact Window12_GF 	"Garderobe [%s]"		(GF_DIELE,Windows) { channel="knx:device:bridge:contacts_ff:Window12" }
+	
+Group Weather_Chart_h
+Group Weather_Chart_d
+Group Weather_Chart_w
+Group HeatPump_Chart_h
+Group HeatPump_Chart_d
+Group HeatPump_Chart_w
+Number HeatPump_Temperature_1 	"Wärmepumpe Außentemperatur [%.1f °C]"	<temperature> (PersistentSnapshot,PersistentChart,Heatpump,Weather_Chart_h,Weather_Chart_d,Weather_Chart_w,HeatPump_Chart_h,HeatPump_Chart_d,HeatPump_Chart_w) { novelanheatpump="temperature_outside" }
+Number HeatPump_Temperature_2	"Rücklauf [%.1f °C]"	<temperature> (PersistentSnapshot,PersistentChart,Heatpump,HeatPump_Chart_h,HeatPump_Chart_d,HeatPump_Chart_w) { novelanheatpump="temperature_return" }
+Number HeatPump_Temperature_3 	"Rücklauf Soll [%.1f °C]"	<temperature> (PersistentSnapshot,PersistentChart,Heatpump,HeatPump_Chart_h,HeatPump_Chart_d,HeatPump_Chart_w) { novelanheatpump="temperature_reference_return" }
+Number HeatPump_Temperature_4 	"Vorlauf [%.1f °C]"	<temperature> (PersistentSnapshot,PersistentChart,Heatpump,HeatPump_Chart_h,HeatPump_Chart_d,HeatPump_Chart_w) { novelanheatpump="temperature_supplay" }
+Number HeatPump_Temperature_5 	"Brauchwasser Soll [%.1f °C]"	<temperature> (PersistentSnapshot,PersistentChart,Heatpump,HeatPump_Chart_h,HeatPump_Chart_d,HeatPump_Chart_w) { novelanheatpump="temperature_servicewater_reference" }
+Number HeatPump_Temperature_6 	"Brauchwasser Ist [%.1f °C]"	<temperature> (PersistentSnapshot,PersistentChart,Heatpump,HeatPump_Chart_h,HeatPump_Chart_d,HeatPump_Chart_w) { novelanheatpump="temperature_servicewater" }
+Number HeatPump_Temperature_7 	"Solarkollektor [%.1f °C]"	<temperature> (PersistentSnapshot,PersistentChart,Heatpump,HeatPump_Chart_h,HeatPump_Chart_d,HeatPump_Chart_w) { novelanheatpump="temperature_solar_collector" }
+Number HeatPump_Temperature_8 	"Solarspeicher [%.1f °C]"	<temperature> (PersistentSnapshot,PersistentChart,Heatpump,HeatPump_Chart_h,HeatPump_Chart_d,HeatPump_Chart_w) { novelanheatpump="temperature_solar_storage" }
+String HeatPump_State 	"Status [%s]"	<temperature> (Heatpump) { novelanheatpump="state" }
 
-//####### Watering ########
-Group 		Watering 							"Bewässerung [%d]" 						<selfwater>
-Group:Switch:OR(ON, OFF) Watering_Circuits 		"Bewässerung [%d]" 						<selfwater>		(Watering)
 
-Switch Watering_Gardenside_Lawn_left			"Bewässerung Rasen links"	<selfwater>		(Watering_Circuits)	{ channel="knx:device:bridge:wattering:gardensideLawnLeft" }
-Switch Watering_Gardenside_Lawn_right			"Bewässerung Rasen rechts"	<selfwater>		(Watering_Circuits)	{ channel="knx:device:bridge:wattering:gardensideLawnRight" }
-Switch Watering_Gardenside_Beds_front			"Bewässerung Beete Terasse"	<selfwater>		(Watering_Circuits)	{ channel="knx:device:bridge:wattering:gardensideBedsFront" }
-Switch Watering_Gardenside_Beds_back			"Bewässerung Beete hinten"	<selfwater>		(Watering_Circuits)	{ channel="knx:device:bridge:wattering:gardensideBedsBack" }
-Switch Watering_Streetside_Lawn					"Bewässerung Rasen vorne"	<selfwater>		(Watering_Circuits)	{ channel="knx:device:bridge:wattering:streetsideLawn" }
-Switch Watering_Streetside_Beds					"Bewässerung Beete vornee"	<selfwater>		(Watering_Circuits)	{ channel="knx:device:bridge:wattering:streetsideBeds" }
+/* Sunset */
+Group Sun 	<sun> (All)
 
-String Watering_Program_State					"Status [%s]"				<selfinfo>		(Watering)
+Switch Sun_DawnTwilight_Solar 			"Solar" 				<none> 	(Sun) // height < 0
+//Switch Sun_DawnTwilight_Civil 			"Civil" 				<none> 	(Sun) // height < 6
+//Switch Sun_DawnTwilight_Nautical 		"Nautical" 				<none> 	(Sun) // height < 12
+Switch Sun_DawnTwilight_Astronomical 	"Astronomical" 			<none> 	(Sun) // height < 18
+Switch Sun_Daemmerung 	"Dämmerung" 			<none> 	(Sun) // height < -3
+Switch Sun_Dunkel 	"Dunkel" 			<none> 	(Sun) // height < -4,5
 
-Number Watering_Program_Duration				"Programm Dauer [%d]"		<selfruntime>	(Watering)
-Switch Watering_Program_Start					"Programm starten"			<selfautomode>	(Watering)
 
-Switch Watering_Gardenside_Lawn_left_Auto		"Automatik Rasen links"	  <selfwater>
-String Watering_Gardenside_Lawn_left_Info		"Info Rasen links [%s]"	  <selfwater>
-Switch Watering_Gardenside_Lawn_right_Auto		"Automatik Rasen rechts"	  <selfwater>
-String Watering_Gardenside_Lawn_right_Info		"Info Rasen rechts [%s]"	  <selfwater>
-Switch Watering_Gardenside_Beds_front_Auto		"Automatik Beete Terasse"  <selfwater>
-String Watering_Gardenside_Beds_front_Info		"Info Beete Terasse [%s]"  <selfwater>
-Switch Watering_Gardenside_Beds_back_Auto		"Automatik Beete hinten"	  <selfwater>
-String Watering_Gardenside_Beds_back_Info		"Info Beete hinten [%s]"	  <selfwater>
-Switch Watering_Streetside_Lawn_Auto			"Automatik Rasen vorne"    <selfwater>
-String Watering_Streetside_Lawn_Info			"Info Rasen vorne [%s]"    <selfwater>
-Switch Watering_Streetside_Beds_Auto			"Automatik Beete vorne"    <selfwater>
-String Watering_Streetside_Beds_Info			"Info Beete vorne [%s]"	  <selfwater>
+String Sunrise_Time						"Sunrise [%s]" 			<none> 	(Sun)
+String Sunset_Time	 					"Sunset [%s]" 			<none> 	(Sun)
+Number Sun_Azimut 						"Azimut [%.1f °]" 		<none> 	(Sun)
+Number Sun_Height 						"Sunheight [%.1f °]" 	<none> 	(Sun)
 
-//####### Common States ########
-Contact		Receiver_State														      { channel="knx:device:bridge:other:receiverState" }
-Contact		Smoke_Detector						 "Rauchmelder [MAP(smoke_detector_de.map):%s]"	<smoke>	  { channel="knx:device:bridge:other:smokeDetector" }
+
+Switch Sun_Fasade_Illum_East 			"East sunny" 			<none> 	(Sun)
+Switch Sun_Fasade_Illum_South 			"South sunny" 			<none> 	(Sun)
+Switch Sun_Fasade_Illum_West 			"West sunny" 			<none> 	(Sun)
+Switch Sun_Fasade_Illum_North 			"North sunny" 			<none> 	(Sun)
+
+Switch Trigger_Switch 			"Trigger" 			<none> 	(Sun)

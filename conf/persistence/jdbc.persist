@@ -11,10 +11,4 @@ Strategies {
  */
 Items {
 	PersistentHistory* : strategy = everyChange
-	Sensor_Window_FF* : strategy = everyChange
-	Sensor_Window_SF* : strategy = everyChange
-	Motiondetector_FF_Floor : strategy = everyChange
-	Motiondetector_FF_Livingroom : strategy = everyChange
-	Motiondetector_SF_Floor : strategy = everyChange
-	Door_FF_Floor : strategy = everyChange
 }

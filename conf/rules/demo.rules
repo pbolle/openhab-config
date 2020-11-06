@@ -1,0 +1,69 @@
+import org.openhab.core.library.types.*
+import java.lang.Math
+import java.util.Calendar
+import java.util.Date
+import java.util.TimeZone
+import java.lang.String
+
+// location and building orientation in degrees 
+var double longitude = 13.60000
+var double latitude = 52.40000	
+var Number diffToFasade = -26.09 // that means Northfasade looks abit more to west. When azimut is between -26.09 or 333,91 and 153,91 (180 + diffToFasade) east-fasade is illuminated
+
+rule "Bewegungmelder Alarm"
+when 
+	Item MotionSensor_GF_DIELE received command ON or
+	Item MotionSensor_GF_WZ received command ON
+then
+	if(Present.state == OFF ) {
+		createTimer(now.plusSeconds(5)) [|
+			if(Present.state == OFF ) {
+				//send("pbolle@gmx.de", "Alarm", "Bewegungsmelder im Haus wurde ausgelöst!" )
+				playSound("/sierene_haus.mp3")
+			}
+		]
+	}
+end
+
+rule "Sicherheit Status Sensor" 
+when
+	Item MotionSensor_GF_DIELE changed or
+	Item MotionSensor_GF_WZ changed
+then
+    Sicherheit_Letzte_Aenderung.postUpdate( now.toString() )
+end
+
+
+
+//Urlaub
+/*
+rule "Unten Licht an"
+when 
+	Time cron "0 0/10 19 * * ?"
+then
+	postUpdate("Light_GF_AZ", "ON" )
+	postUpdate("Light1_GF_WZ", "ON" )
+end
+
+rule "Unten Licht aus"
+when 
+	Time cron "0 0/10 23 * * ?"
+then
+	postUpdate("Light_GF_AZ", "OFF" )
+	postUpdate("Light1_GF_WZ", "OFF" )
+end
+
+rule "Oben Licht an"
+when 
+	Time cron "0 0/10 21 * * ?"
+then
+	postUpdate("Light_FF_BAD", "ON" )
+end
+
+rule "Oben Licht aus"
+when 
+	Time cron "0 0/15 23 * * ?"
+then
+	postUpdate("Light_FF_BAD", "OFF" )
+end
+*/
