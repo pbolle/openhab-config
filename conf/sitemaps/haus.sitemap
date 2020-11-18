@@ -67,4 +67,22 @@ sitemap default label="Main Menu"
 			}
 		}
 	}
+	Frame label="photovoltaik" {
+		Group label="Solar [%.2f kWh]" item=Solar_Daily_Yield {
+			Frame label="Solar" {
+				Text item=Solar_Daily_Yield
+				Text item=Solar_AC_Power
+				Text item=Solar_DC_Power
+				Text item=Solar_DC_Voltage
+				Text item=Solar_DC_Current
+				Text item=Solar_Total_Yield
+				Text item=Solar_Power_Limitation
+			}
+			Frame label="Auswertung" {
+				Selection item=Chart_From mappings=[HOUR="Stunde", DAY="Tag", WEEK="Woche", MONTH="Monat", YEAR="Jahr", 5YEARS="5 Jahre"]
+				Webview url="/static/custom/grafana/solar_energy.html?fromItem=Chart_From" icon=none height=18
+			}
+		}
+
+	}
 }
