@@ -1,7 +1,3 @@
-// log:set DEBUG org.openhab.binding.network
-{% for phone_name in phone_ips %}network:pingdevice:{{phone_name}} "Telefon {{loop.index}}" @ "Geräte" [ hostname="{{phone_ips[phone_name]}}", retry=12, timeout=10000, refreshInterval=5000 ] // max 3.0 min
-{% endfor %}
-
 network:speedtest:local "SpeedTest 50Mo" @ "Services" [refreshInterval=60, uploadSize=1000000, url="https://bouygues.testdebit.info/", fileName="10M.iso"]
 
 astro:moon:local [ geolocation="{{location}}", interval=300 ]
