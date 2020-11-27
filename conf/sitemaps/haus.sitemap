@@ -2,7 +2,7 @@ sitemap default label="Main Menu"
 {
 	Frame {
 		Group item=gGF label="Untergeschoss" icon="groundfloor"
-		Group item=gFF label="Obergeschoss" icon="1stfloor"
+		Group item=gFF label="Obergeschoss" icon="firstfloor"
 		Group item=garden label="Garten" icon="garden"
 		Group item=Heatpump label="Heizung" icon="heating"
 		Text item=HeatPump_Temperature_6 icon="pie" {
