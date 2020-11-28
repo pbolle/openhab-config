@@ -6,14 +6,9 @@ sitemap default label="Main Menu"
 		Group item=garden label="Garten" icon="garden"
 		Group item=Heatpump label="Heizung" icon="heating"
 		Text item=HeatPump_Temperature_6 icon="pie" {
-			Frame {
-				Chart item=HeatPump_Chart_h period=h refresh=100000
-			}
-			Frame {
-				Chart item=HeatPump_Chart_d period=D refresh=10000000
-			}
-			Frame {
-				Chart item=HeatPump_Chart_w period=W refresh=10000000
+			Frame label="Auswertung" {
+				Selection item=Chart_From mappings=[HOUR="Stunde", DAY="Tag", WEEK="Woche", MONTH="Monat", YEAR="Jahr", 5YEARS="5 Jahre"]
+				Webview url="/static/custom/grafana/heatpump.html?fromItem=Chart_From" icon=none height=12
 			}
 		}
 	}
