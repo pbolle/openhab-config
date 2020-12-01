@@ -6,9 +6,13 @@ sitemap default label="Main Menu"
 		Group item=garden label="Garten" icon="garden"
 		Group item=Heatpump label="Heizung" icon="heating"
 		Text item=HeatPump_Temperature_6 icon="pie" {
-			Frame label="Auswertung" {
+			Frame label="Heizung" {
 				Selection item=Chart_From mappings=[HOUR="Stunde", DAY="Tag", WEEK="Woche", MONTH="Monat", YEAR="Jahr", 5YEARS="5 Jahre"]
 				Webview url="/static/custom/grafana/heatpump.html?fromItem=Chart_From" icon=none height=12
+			}
+			Frame label="Warm Wasser" {
+				Selection item=Chart_From mappings=[HOUR="Stunde", DAY="Tag", WEEK="Woche", MONTH="Monat", YEAR="Jahr", 5YEARS="5 Jahre"]
+				Webview url="/static/custom/grafana/hotwater.html?fromItem=Chart_From" icon=none height=12
 			}
 		}
 	}
