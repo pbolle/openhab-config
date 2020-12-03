@@ -29,6 +29,38 @@ sitemap default label="Main Menu"
 				Chart item=Weather_Chart_w period=W refresh=10000000
 			}
 		}
+		Text label="Sonnenauf & Untergang" icon="selfsun" {
+			Frame label="Tageszeiten"
+			{
+				Text item=Dawn_Time
+				Text item=Sunrise_Time
+				Text item=Sunset_Time
+				Text item=Dusk_Time
+			}
+			Frame label="Sonnenstand"
+			{
+				Text item=Sun_Azimuth        
+				Text item=Sun_Elevation      
+				Text item=Total_Radiation    
+				Text item=Diffuse_Radiation  
+			}
+			Frame label="Details"
+			{
+				Text item=Zodiac_Name          
+				Text item=Season             
+				Text item=MoonPhase          
+				Text item=FullMoon         
+				Text item=NewMoon          
+				Text item=Eclipse_Time       
+			}
+			Frame label="Begin & Ende"
+			{
+				Text item=Spring_Time		
+				Text item=Summer_Time		
+				Text item=Autumn_Time		
+				Text item=Winter_Time		
+			}
+		}
 	}
 	Frame label="Hausstatus" {
 		Switch item=Present label="anwesend"  mappings=[ON="On",OFF="off"]
