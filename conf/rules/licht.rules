@@ -8,7 +8,7 @@ end
 
 rule "Sunset Dummy Lights ON when Sun Elevation -5° Rule"
 when
-Item Sun_Elevation changed
+	Item Sun_Elevation changed
 then
 if(Sun_Elevation.state < -5|°){
     Light_shelter_out_side.sendCommand (ON)
@@ -23,7 +23,7 @@ end
 
 rule "Sunset Dummy Lights ON when Sun Elevation -3° Rule"
 when
-Item Sun_Elevation changed
+	Item Sun_Elevation changed
 then
 if(Sun_Elevation.state < -3|°){
     LightS_Outdoor.sendCommand (ON)
@@ -35,7 +35,7 @@ end
 
 rule "Sunset Dummy Lights ON when Sun Elevation -2° Rule"
 when
-Item Sun_Elevation changed
+	Item Sun_Elevation changed
 then
 if(Sun_Elevation.state < -2|°){
     LightN_Outdoor.sendCommand (ON)
@@ -47,7 +47,7 @@ end
 
 rule "Sunset Dummy Lights ON when Sun Elevation 0° Rule"
 when
-Item Sun_Elevation changed
+	Item Sun_Elevation changed
 then
 if(Sun_Elevation.state < 0|°){
     Light_Outdoor_lane.sendCommand (ON)

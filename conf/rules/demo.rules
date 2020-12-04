@@ -1,9 +1,4 @@
 import org.openhab.core.library.types.*
-import java.lang.Math
-import java.util.Calendar
-import java.util.Date
-import java.util.TimeZone
-import java.lang.String
 
 // location and building orientation in degrees 
 var double longitude = 13.60000
