@@ -17,3 +17,10 @@ Switch  FritzboxGuestWifi             "Gäste WLAN"                             
 Number Speedtest_UpstreamRate    "Upstream Gemessen [%d MBit]"                                 <flowpipe> (PersistentChart,PersistentHistory)    {channel="network:speedtest:local:rateUp"}
 Number Speedtest_DownstreamRate  "Downstream Gemessen [%d MBit]"                               <returnpipe>   (PersistentChart,PersistentHistory) {channel="network:speedtest:local:rateDown"}
 DateTime Speedtest_Start                          "Speedtest [%1$tH:%1$tM]"                 <time>                                            {channel="network:speedtest:local:testStart"}
+
+# avmfritz
+Switch Outlet1 "Switchable outlet" { channel="avmfritz:FRITZ_DECT_210:1:FRITZ_DECT_210_1:outlet" }
+Number:Temperature Temperature1 "Current measured temperature [%.1f %unit%]" { channel="avmfritz:FRITZ_DECT_210:1:FRITZ_DECT_210_1:temperature" }
+Number:Energy Energy1 "Accumulated energy consumption [%.3f kWh]" { channel="avmfritz:FRITZ_DECT_210:1:FRITZ_DECT_210_1:energy" }
+Number:Power Power1 "Current power consumption [%.2f %unit%]" { channel="avmfritz:FRITZ_DECT_210:1:FRITZ_DECT_210_1:power" }
+Number:ElectricPotential Voltage1 "Current voltage [%.1f %unit%]" { channel="avmfritz:FRITZ_DECT_210:1:FRITZ_DECT_210_1:voltage" }

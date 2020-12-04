@@ -96,6 +96,13 @@ sitemap default label="Main Menu"
 				Selection item=Chart_From mappings=[HOUR="Stunde", DAY="Tag", WEEK="Woche", MONTH="Monat", YEAR="Jahr", 5YEARS="5 Jahre"]
 				Webview url="/static/custom/grafana/internet.html?fromItem=Chart_From" icon=none height=12
 			}
+			Frame label="FRITZ!DECT 200 switchable outlet" {
+				Switch item=Outlet1 icon="poweroutlet"
+				Text item=Temperature1 icon="temperature"
+				Text item=Energy1 icon="energy"
+				Text item=Power1 icon="energy"
+				Text item=Voltage1 icon="energy"
+			}
 		}
 	}
 	Frame label="photovoltaik" {

@@ -1,10 +1,5 @@
 import org.openhab.core.library.types.*
 
-// location and building orientation in degrees 
-var double longitude = 13.60000
-var double latitude = 52.40000	
-var Number diffToFasade = -26.09 // that means Northfasade looks abit more to west. When azimut is between -26.09 or 333,91 and 153,91 (180 + diffToFasade) east-fasade is illuminated
-
 rule "Bewegungmelder Alarm"
 when 
 	Item MotionSensor_GF_DIELE received command ON or
