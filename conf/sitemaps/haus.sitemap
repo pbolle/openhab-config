@@ -105,16 +105,25 @@ sitemap default label="Main Menu"
 			}
 		}
 	}
-	Frame label="photovoltaik" {
-		Group label="Solar [%.2f kWh]" item=Solar_Daily_Yield {
-			Frame label="Solar" {
-				Text item=Solar_Daily_Yield
-				Text item=Solar_AC_Power
-				Text item=Solar_DC_Power
-				Text item=Solar_DC_Voltage
-				Text item=Solar_DC_Current
-				Text item=Solar_Total_Yield
-				Text item=Solar_Power_Limitation
+	Frame label="Photovoltaik" {
+		Group label="Bezogene Leistung [%.2f W]" item=Meter_powerIn {
+			Frame label="Meter" {
+				Text item=Meter_powerIn
+				Text item=Meter_powerOut
+				Text item=Meter_energyIn
+				Text item=Meter_energyOut
+				Text item=Meter_powerInL1
+				Text item=Meter_powerOutL1
+				Text item=Meter_energyInL1
+				Text item=Meter_energyOutL1
+				Text item=Meter_powerInL2
+				Text item=Meter_powerOutL2
+				Text item=Meter_energyInL2
+				Text item=Meter_energyOutL2
+				Text item=Meter_powerInL3
+				Text item=Meter_powerOutL3
+				Text item=Meter_energyInL3
+				Text item=Meter_energyOutL3
 			}
 			Frame label="Auswertung" {
 				Selection item=Chart_From mappings=[HOUR="Stunde", DAY="Tag", WEEK="Woche", MONTH="Monat", YEAR="Jahr", 5YEARS="5 Jahre"]

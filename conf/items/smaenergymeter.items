@@ -1,0 +1,16 @@
+Number Meter_powerIn						"Bezogene Leistung [%d W]"          <energymeter>        (PersistentChart,PersistentHistory)                 { channel="smaenergymeter:energymeter:-1292834906:powerIn" }
+Number Meter_powerOut						"Eingespeise Leistung [%d W]"       <energymeter>        (PersistentChart,PersistentHistory)                 { channel="smaenergymeter:energymeter:-1292834906:powerOut" }
+Number Meter_energyIn						"Bezogene Energie [%d kWh]"         <energymeter>                                                            { channel="smaenergymeter:energymeter:-1292834906:energyIn" }
+Number Meter_energyOut						"Eingespeiste Energie [%d kWh]"     <energymeter>                                                            { channel="smaenergymeter:energymeter:-1292834906:energyOut" }
+Number Meter_powerInL1						"Purchased Power L1 [%d W]"         <energymeter>        (PersistentChart,PersistentHistory)                 { channel="smaenergymeter:energymeter:-1292834906:powerInL1" }
+Number Meter_powerOutL1						"Grid Feed-in Power L1 [%d W]"      <energymeter>        (PersistentChart,PersistentHistory)                 { channel="smaenergymeter:energymeter:-1292834906:powerOutL1" }
+Number Meter_energyInL1						"Purchased Energy L1 [%d kWh]"      <energymeter>                                                            { channel="smaenergymeter:energymeter:-1292834906:energyInL1" }
+Number Meter_energyOutL1					"Grid Feed-in Energy L1 [%d kWh]"   <energymeter>                                                            { channel="smaenergymeter:energymeter:-1292834906:energyOutL1" }
+Number Meter_powerInL2						"Purchased Power L2 [%d W]"         <energymeter>        (PersistentChart,PersistentHistory)                 { channel="smaenergymeter:energymeter:-1292834906:powerInL2" }
+Number Meter_powerOutL2						"Grid Feed-in Power L2 [%d W]"      <energymeter>        (PersistentChart,PersistentHistory)                 { channel="smaenergymeter:energymeter:-1292834906:powerOutL2" }
+Number Meter_energyInL2						"Purchased Energy L2 [%d kWh]"      <energymeter>                                                            { channel="smaenergymeter:energymeter:-1292834906:powerOutL2" }
+Number Meter_energyOutL2					"Grid Feed-in Energy L2 [%d kWh]"   <energymeter>                                                            { channel="smaenergymeter:energymeter:-1292834906:energyOutL2" }
+Number Meter_powerInL3						"Purchased Power L3 [%d W]"         <energymeter>        (PersistentChart,PersistentHistory)                 { channel="smaenergymeter:energymeter:-1292834906:powerInL3" }
+Number Meter_powerOutL3						"Grid Feed-in Power L3 [%d W]"      <energymeter>        (PersistentChart,PersistentHistory)                 { channel="smaenergymeter:energymeter:-1292834906:powerOutL3" }
+Number Meter_energyInL3						"Purchased Energy L3 [%d kWh]"      <energymeter>                                                            { channel="smaenergymeter:energymeter:-1292834906:energyInL3" }
+Number Meter_energyOutL3					"Grid Feed-in Energy L3 [%d kWh]"   <energymeter>                                                            { channel="smaenergymeter:energymeter:-1292834906:energyOutL3" }
