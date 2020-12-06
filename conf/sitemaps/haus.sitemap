@@ -107,7 +107,7 @@ sitemap default label="Main Menu"
 	}
 	Frame label="Photovoltaik" {
 		Group label="Bezogene Leistung [%.2f W]" item=Meter_powerIn {
-			Frame label="Meter" {
+			Frame label="Energymeter" {
 				Text item=Meter_powerIn
 				Text item=Meter_powerOut
 				Text item=Meter_energyIn
@@ -127,7 +127,7 @@ sitemap default label="Main Menu"
 			}
 			Frame label="Auswertung" {
 				Selection item=Chart_From mappings=[HOUR="Stunde", DAY="Tag", WEEK="Woche", MONTH="Monat", YEAR="Jahr", 5YEARS="5 Jahre"]
-				Webview url="/static/custom/grafana/solar_energy.html?fromItem=Chart_From" icon=none height=18
+				Webview url="/static/custom/grafana/energymeter.html?fromItem=Chart_From" icon=none height=18
 			}
 		}
 
