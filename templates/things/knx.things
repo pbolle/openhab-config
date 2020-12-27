@@ -48,14 +48,14 @@ Bridge	knx:ip:bridge [
 		Type	switch		:	Kammer 			"Kammer" 				[ ga="1/0/2" ]
 		Type	switch		:	Notlicht 		"Notlicht" 				[ ga="1/0/4" ]
 
-		Type	dimmer		:	Bad 			"Bad [%d]" 				[ switch="1/3/1", increaseDecrease="1/4/1" ]
+		Type	dimmer		:	Bad 			"Bad [%d]" 				[ switch="1/3/1", increaseDecrease="1/4/1", position="1/4/5" ]
 
-		Type	dimmer		:	AK 				"Abstellkammer [%d]" 	[ switch="1/3/0", increaseDecrease="1/4/0" ]
+		Type	dimmer		:	AK 				"Abstellkammer [%d]" 	[ switch="1/3/0", increaseDecrease="1/4/0", position="1/4/4" ]
 
 		Type	switch		:	Ankleidezimmer 	"Ankleidezimmer" 		[ ga="1/0/3" ]
-		Type	dimmer		:	Schlafzimmer 	"Schlafzimmer [%d]" 	[ switch="1/3/2", increaseDecrease="1/4/2" ]
+		Type	dimmer		:	Schlafzimmer 	"Schlafzimmer [%d]" 	[ switch="1/3/2", increaseDecrease="1/4/2", position="1/4/6" ]
 
-		Type	dimmer		:	Kind 			"Kind [%d]" 			[ switch="1/3/3", increaseDecrease="1/4/3" ]
+		Type	dimmer		:	Kind 			"Kind [%d]" 			[ switch="1/3/3", increaseDecrease="1/4/3", position="1/4/7" ]
     }
 
     Thing device shutter_ff "KNX Rollläden" @ "Erdgeschoss"
