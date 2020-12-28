@@ -5,4 +5,6 @@ astro:sun:local [ geolocation="{{location}}", interval=300 ]
 ntp:ntp:local [ hostname="de.pool.ntp.org", refreshInterval=60, refreshNtp=30 ]
 
 Bridge hue:bridge:default [ ipAddress="{{hue_ip}}", userName="{{vault_hue_user_id}}" ] {
+    0210 lamp_small [ lightId="00:17:88:01:03:8c:c5:0e-0b" ]
+    0210 lamp_big [ lightId="00:17:88:01:03:d1:44:f7-0b" ]
 }
