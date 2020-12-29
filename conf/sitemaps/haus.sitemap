@@ -91,9 +91,6 @@ sitemap default label="Main Menu"
 				Webview url="/static/custom/grafana/internet.html?fromItem=Chart_From" icon=none height=12
 			}
 		}
-		Group label="Telefon" {
-			
-		}
 	}
 	Frame label="Photovoltaik" icon="energy" {
 		Group label="Bezogene Leistung [%.2f W]" item=Meter_powerIn {
