@@ -17,9 +17,3 @@ Switch  FritzboxGuestWifi             "Gäste WLAN"                             
 Number Speedtest_UpstreamRate    "Upstream Gemessen [%d MBit]"                                 <flowpipe> (PersistentChart,PersistentHistory)    {channel="network:speedtest:local:rateUp"}
 Number Speedtest_DownstreamRate  "Downstream Gemessen [%d MBit]"                               <returnpipe>   (PersistentChart,PersistentHistory) {channel="network:speedtest:local:rateDown"}
 DateTime Speedtest_Start                          "Speedtest [%1$tH:%1$tM]"                 <time>                                            {channel="network:speedtest:local:testStart"}
-
-String CallState     "Call State [%s]"               { channel="avmfritz:fritzbox:1:call_state" }
-Call   IncomingCall  "Incoming call: [%1$s to %2$s]" { channel="avmfritz:fritzbox:1:incoming_call" } 
-Call   OutgoingCall  "Outgoing call: [%1$s to %2$s]" { channel="avmfritz:fritzbox:1:outgoing_call" }
-Call   ActiveCall    "Call established [%1$s]"       { channel="avmfritz:fritzbox:1:active_call" }
-String ApplyTemplate "Apply template"                { channel="avmfritz:fritzbox:1:apply_template" }
