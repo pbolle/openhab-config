@@ -1,5 +1,5 @@
-Color  Livingroom_Light_Hue1_Color          "Farbe"     <colorwheel> (GF_WZ)              { channel="hue:0210:default:lamp1:color"}
-Dimmer Livingroom_Light_Hue1_Temperature    "Farbtemperatur" <selflight> (GF_WZ)          { channel="hue:0210:default:lamp1:color_temperature"}
+Color  Livingroom_Light_Small_Color          "Farbe"     <colorwheel> (GF_WZ)              { channel="hue:0210:default:lamp_small:color"}
+Dimmer Livingroom_Light_Small_Temperature    "Farbtemperatur" <selflight> (GF_WZ)          { channel="hue:0210:default:lamp_small:color_temperature"}
 
-Color  Livingroom_Light_Hue2_Color          "Farbe" <colorwheel> (GF_WZ)                  { channel="hue:0210:default:lamp2:color"}
-Dimmer Livingroom_Light_Hue2_Temperature    "Farbtemperatur" <selflight> (GF_WZ)          { channel="hue:0210:default:lamp2:color_temperature"}
+Color  Livingroom_Light_Big_Color          "Farbe" <colorwheel> (GF_WZ)                  { channel="hue:0210:default:lamp_big:color"}
+Dimmer Livingroom_Light_Big_Temperature    "Farbtemperatur" <selflight> (GF_WZ)          { channel="hue:0210:default:lamp_big:color_temperature"}
