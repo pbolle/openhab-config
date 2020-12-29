@@ -61,7 +61,7 @@ sitemap default label="Main Menu"
 		Switch item=Present label="anwesend"  mappings=[ON="On",OFF="off"]
 //		Switch item=Bewaesserung label="Bewässerung"  mappings=[ON="On",OFF="off"]
 		Group item=Windows
-		Frame label="Telefon" {
+		Group label="Telefon" {
 			Text item=CallState
 			Text item=IncomingCall
 			Text item=OutgoingCall
