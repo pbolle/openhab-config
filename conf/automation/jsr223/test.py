@@ -23,6 +23,9 @@ class DoorBellNotificationRule:
 
     def execute(self, module, input):
 
+        self.log.info(u"test {}".format(input))
+        self.log.info(u"test {}".format(module))
+
         state = input['event'].getItemState()
         name = input['event'].getItemName()
 
