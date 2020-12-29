@@ -26,7 +26,7 @@ class DoorBellNotificationRule:
         state = input['event'].getItemState()
         name = input['event'].getItemName()
 
-        self.log.info(u"test {} {}".format(state, name))
+        self.log.info(u"test {} {}".format(type(state), name))
 
         #if itemStateOlderThen("pOutdoor_Streedside_Gardendoor_Bell_Last_Change", getNow().minusSeconds(30)):
         #    sendNotification("Klingel", "Es klingelt", "https://smartmarvin.de/cameraStrasseImage" )

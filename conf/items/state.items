@@ -1,2 +1,2 @@
-Number State_Server 							"Serverstatus [MAP(server_status.map):%s]"  			<selferror>
-String Chart_From                               "Zeitraum"                      <selfcalendar>
+Number ServerState 							"Serverstatus [MAP(server_status.map):%s]"  			<selferror>
+String Chart_From                           "Zeitraum"                      <selfcalendar>
