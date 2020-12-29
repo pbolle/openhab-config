@@ -59,8 +59,15 @@ sitemap default label="Main Menu"
 	}
 	Frame label="Hausstatus" {
 		Switch item=Present label="anwesend"  mappings=[ON="On",OFF="off"]
-		Switch item=Bewaesserung label="Bewässerung"  mappings=[ON="On",OFF="off"]
+//		Switch item=Bewaesserung label="Bewässerung"  mappings=[ON="On",OFF="off"]
 		Group item=Windows
+		Frame label="Telefon" {
+			Text item=CallState
+			Text item=IncomingCall
+			Text item=OutgoingCall
+			Text item=ActiveCall
+			Selection item=ApplyTemplate
+		}
 		Group item=FritzboxDslStatus label="DSL Status [MAP(network_states.map):%s]" {
 			Frame label="Status" {
 				Text item=FritzboxDslEnable
