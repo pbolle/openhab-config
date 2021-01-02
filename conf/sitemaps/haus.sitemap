@@ -61,6 +61,7 @@ sitemap default label="Main Menu"
 		Switch item=Present label="anwesend"  mappings=[ON="On",OFF="off"]
 		Group item=Windows
 		Group item=phone
+		Group item=fritzdect
 		Group item=FritzboxDslStatus label="DSL Status [MAP(network_states.map):%s]" {
 			Frame label="Status" {
 				Text item=FritzboxDslEnable

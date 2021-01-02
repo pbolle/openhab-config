@@ -24,3 +24,10 @@ Call   IncomingCall  "Incoming call: [%1$s to %2$s]" (phone) { channel="avmfritz
 Call   OutgoingCall  "Outgoing call: [%1$s to %2$s]" (phone) { channel="avmfritz:fritzbox:1:outgoing_call" }
 Call   ActiveCall    "Call established [%1$s]"       (phone) { channel="avmfritz:fritzbox:1:active_call" }
 String ApplyTemplate "Apply template"                (phone) { channel="avmfritz:fritzbox:1:apply_template" }
+
+Group fritzdect "Fritz Dect" 	<poweroutlet_eu>	(All)
+Switch dect_switch1 "Dect Steckdose1" (fritzdect) { channel="avmfritz:FRITZ_DECT_200:1:FRITZ_DECT_210_1:outlet" }
+Number:Temperature dect_switch1_temperature "Dect Steckdose1 Temperatur [%.1f %unit%]" (fritzdect)  { channel="avmfritz:FRITZ_DECT_200:1:FRITZ_DECT_210_1:temperature" }
+Number:Energy dect_switch1_energy "Dect Steckdose1 Leistung [%.3f kWh]" (fritzdect) { channel="avmfritz:FRITZ_DECT_200:1:FRITZ_DECT_210_1:energy" }
+Number:Power dect_switch1_power "Dect Steckdose1  Strom [%.2f %unit%]" (fritzdect)  { channel="avmfritz:FRITZ_DECT_200:1:FRITZ_DECT_210_1:power" }
+Number:ElectricPotential dect_switch1_voltage "Dect Steckdose1 Volt [%.1f %unit%]" (fritzdect)  { channel="avmfritz:FRITZ_DECT_200:1:FRITZ_DECT_210_1:voltage" }
