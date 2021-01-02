@@ -32,9 +32,9 @@ Bridge	knx:ip:bridge [
 		Type	switch		:	WC			"WC"						[ ga="0/0/4" ]
 		Type	switch 		:	WC_Spiegel	"WC Spiegel" 				[ ga="0/0/7" ]
 		Type	switch 		:	Kueche		"Küche"						[ ga="0/0/2" ]
-		Type	dimmer		:	EZ			"Esszimmer [%d]"			[ switch="0/3/2", increaseDecrease="0/4/2", position="0/4/6" ]
+		Type	dimmer		:	EZ			"Esszimmer [%d]"			[ switch="0/3/1", increaseDecrease="0/4/1", position="0/4/7" ]
 
-		Type	dimmer		:	WZ 			"Wohnzimmer [%d]" 			[ switch="0/3/1", increaseDecrease="0/4/1", position="0/4/7" ]
+		Type	dimmer		:	WZ 			"Wohnzimmer [%d]" 			[ switch="0/3/2", increaseDecrease="0/4/2", position="0/4/6" ]
 
 		Type	dimmer		:	AZ 			"Licht [%d]" 				[ switch="0/3/0", increaseDecrease="0/4/0", position="0/4/5" ]
 
