@@ -58,10 +58,22 @@ sitemap default label="Main Menu"
 		}
 	}
 	Frame label="Hausstatus" {
-		Switch item=Present label="anwesend"  mappings=[ON="On",OFF="off"]
+		Switch item=Present label="anwesend" icon="motion"  mappings=[ON="On",OFF="off"]
 		Group item=Windows
 		Group item=phone
-		Group item=fritzdect
+		Text item=dect_switch1_temperature icon="poweroutlet_eu" {
+			Frame label="Dect 1" {
+				Switch item=dect_switch1
+				Text item=dect_switch1_temperature
+				Text item=dect_switch1_energy
+				Text item=dect_switch1_power
+				Text item=dect_switch1_voltage
+			}
+			Frame label="Temperatur" {
+				Selection item=Chart_From mappings=[HOUR="Stunde", DAY="Tag", WEEK="Woche", MONTH="Monat", YEAR="Jahr", 5YEARS="5 Jahre"]
+				Webview url="/static/custom/grafana/temperatur.html?fromItem=Chart_From" icon=none height=12
+			}
+		}		
 		Group item=FritzboxDslStatus label="DSL Status [MAP(network_states.map):%s]" {
 			Frame label="Status" {
 				Text item=FritzboxDslEnable
@@ -96,23 +108,17 @@ sitemap default label="Main Menu"
 	}
 	Frame label="Photovoltaik" icon="energy" {
 		Group label="Bezogene Leistung [%.2f W]" item=Meter_powerIn {
-			Frame label="Energymeter" {
+			Frame label="Energymeter gesamt" {
 				Text item=Meter_powerIn
 				Text item=Meter_powerOut
-				Text item=Meter_energyIn
-				Text item=Meter_energyOut
+			}
+			Frame label="je Phase" {
 				Text item=Meter_powerInL1
 				Text item=Meter_powerOutL1
-				Text item=Meter_energyInL1
-				Text item=Meter_energyOutL1
 				Text item=Meter_powerInL2
 				Text item=Meter_powerOutL2
-				Text item=Meter_energyInL2
-				Text item=Meter_energyOutL2
 				Text item=Meter_powerInL3
 				Text item=Meter_powerOutL3
-				Text item=Meter_energyInL3
-				Text item=Meter_energyOutL3
 			}
 			Frame label="Auswertung" {
 				Selection item=Chart_From mappings=[HOUR="Stunde", DAY="Tag", WEEK="Woche", MONTH="Monat", YEAR="Jahr", 5YEARS="5 Jahre"]
