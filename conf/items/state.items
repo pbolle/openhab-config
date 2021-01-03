@@ -1,4 +1,4 @@
 Number State_Server 							"Serverstatus [MAP(server_status.map):%s]"  			<selferror>
 String Chart_From                               "Zeitraum"                      <selfcalendar>
 
-DateTime Gardendoor_Bell_Last_Change "Klingel [%1$tH:%1$tM:%1$tS, %1$td.%1$tm]"    <lock> (eOutdoor_Streedside_Gardendoor) ["Point"]
+DateTime Gardendoor_Bell_Last_Change "Klingel [%1$tH:%1$tM:%1$tS, %1$td.%1$tm]"    <lock> (garden_door) ["Point"]
