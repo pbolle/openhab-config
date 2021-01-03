@@ -106,8 +106,8 @@ sitemap default label="Main Menu"
 			}
 		}
 	}
-	Text label="Photovoltaik" icon="solarplant" {
-		Group label="Bezogene Leistung [%.2f W]" item=Meter_powerIn {
+	Frame label="Strom" {
+		Text label="Bezogene Leistung [%.2f W]" icon="solarplant" item=Meter_powerIn  {
 			Frame label="Energymeter gesamt" {
 				Text item=Meter_powerIn
 				Text item=Meter_powerOut
@@ -125,6 +125,5 @@ sitemap default label="Main Menu"
 				Webview url="/static/custom/grafana/energymeter.html?fromItem=Chart_From" icon=none height=18
 			}
 		}
-
 	}
 }
