@@ -12,8 +12,8 @@ class DoorBellNotificationRule:
 
     def execute(self, module, input):
         state = input['event'].getItemState()
-        self.log.info(u"tel 0: {}".format(state.getValue(0)))
-        self.log.info(u"tel 1: {}".format(state.getValue(1)))
+        # self.log.info(u"tel 0: {}".format(state.getValue(0)))
+        # self.log.info(u"tel 1: {}".format(state.getValue(1)))
         if  type(state) is StringListType and itemStateOlderThen("Gardendoor_Bell_Last_Change", getNow().minusSeconds(30)) and state.getValue(1) == '99999999' :
             sendNotification("Klingel", "Es klingelt", "https://bolle.haus/cameraStrasseImage" )
             postUpdate("Gardendoor_Bell_Last_Change", DateTimeType())
