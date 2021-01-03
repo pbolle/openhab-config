@@ -105,7 +105,6 @@ sitemap default label="Main Menu"
 				Webview url="/static/custom/grafana/internet.html?fromItem=Chart_From" icon=none height=12
 			}
 		}
-		Text item=Gardendoor_Bell_Last_Change
 	}
 	Frame label="Strom" {
 		Text label="Bezogene Leistung [%.2f W]" icon="solarplant" item=Meter_powerIn  {
