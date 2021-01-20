@@ -56,6 +56,29 @@ sitemap default label="Main Menu"
 				Text item=Winter_Time		
 			}
 		}
+		Text label="Wetter" icon="selfsun" {
+			Frame label="Wetter" {
+				Text item=WeatherStation_Temperature
+				Text item=WeatherStation_Humidity
+				Text item=WeatherStation_Pressure
+				Text item=WeatherStation_Dewpoint
+			}
+			Frame label="Regen" {
+				Text item=WeatherStation_Rain_Current
+				Text item=WeatherStation_Rain_Daily
+			}
+			Frame label="Wind" {
+				Text item=WeatherStation_Wind_Current
+				Text item=WeatherStation_Wind_Speed
+				Text item=WeatherStation_Wind_Gust
+				Text item=WeatherStation_Wind_Direction
+			}
+			Frame label="Sonne" {
+				Text item=WeatherStation_Solar_Power
+				Text item=WeatherStation_Light_Level
+				Text item=WeatherStation_UV_Index
+			}
+		}
 	}
 	Frame label="Hausstatus" {
 		Switch item=Present label="anwesend" icon="motion"  mappings=[ON="On",OFF="off"]

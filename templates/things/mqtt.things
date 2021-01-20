@@ -1,3 +1,22 @@
+Bridge mqtt:broker:cloud [ host="mosquitto.cloud", secure=false ]
+{
+    Thing topic weatherstation "Wetterstation" @ "Geräte" {
+        Type number : rain_current "rain current" [ stateTopic="hhees/pOutdoor_WeatherStation_Rain_Current" ]
+        Type number : rain_daily "rain daily" [ stateTopic="hhees/pOutdoor_WeatherStation_Rain_Daily" ]
+        Type number : wind_current "wind current" [ stateTopic="hhees/pOutdoor_WeatherStation_Wind_Current" ]
+        Type number : wind_speed "wind speed" [ stateTopic="hhees/pOutdoor_WeatherStation_Wind_Speed" ]
+        Type number : wind_gust "wind gust" [ stateTopic="hhees/pOutdoor_WeatherStation_Wind_Gust" ]
+        Type number : wind_direction "wind direction" [ stateTopic="hhees/pOutdoor_WeatherStation_Wind_Direction" ]
+        Type number : dewpoint "dewpoint" [ stateTopic="hhees/pOutdoor_WeatherStation_Dewpoint" ]
+        Type number : temperature "temperature" [ stateTopic="hhees/pOutdoor_WeatherStation_Temperature" ]
+        Type number : humidity "humidity" [ stateTopic="hhees/pOutdoor_WeatherStation_Humidity" ]
+        Type number : pressure "pressure" [ stateTopic="hhees/pOutdoor_WeatherStation_Pressure" ]
+        Type number : solar_power "solar_power" [ stateTopic="hhees/pOutdoor_WeatherStation_Solar_Power" ]
+        Type number : light_level "light_level" [ stateTopic="hhees/pOutdoor_WeatherStation_Light_Level" ]
+        Type number : uv_index "uv_index" [ stateTopic="hhees/pOutdoor_WeatherStation_UV_Index" ]
+    }
+}
+
 Bridge mqtt:broker:mosquitto [ host="mosquitto", secure=false ]
 {
     Thing topic device_ping "Device Ping" @ "Geräte" {

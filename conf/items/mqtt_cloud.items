@@ -1,0 +1,14 @@
+Number WeatherStation_Rain_Current          "Aktuell [%.1f mm]" <selfrain> {channel="mqtt:topic:cloud:weatherstation:rain_current" }
+Number WeatherStation_Rain_Daily            "Heute [%.1f mm]" <selfrain> {channel="mqtt:topic:cloud:weatherstation:rain_daily" }
+Number WeatherStation_Wind_Current          "Böe (15 min). [%.1f km/h]" <wind> {channel="mqtt:topic:cloud:weatherstation:wind_current" }
+Number WeatherStation_Wind_Speed            "Geschwindigkeit [%.1f km/h]" <wind> {channel="mqtt:topic:cloud:weatherstation:wind_speed" }
+Number WeatherStation_Wind_Gust             "Böe [%.1f km/h]" <wind> {channel="mqtt:topic:cloud:weatherstation:wind_gust" }
+Number WeatherStation_Wind_Direction        "Richtung [%d °]" <wind> {channel="mqtt:topic:cloud:weatherstation:wind_direction" }
+Number WeatherStation_Dewpoint              "Taupunkt [%.1f °C]" <selftemperature> {channel="mqtt:topic:cloud:weatherstation:dewpoint" }
+Number WeatherStation_Temperature           "Temperatur [%.1f °C]" <selftemperature> {channel="mqtt:topic:cloud:weatherstation:temperature" }
+Number WeatherStation_Humidity              "Feuchtigkeit [%.1f %%]" <humidity> {channel="mqtt:topic:cloud:weatherstation:humidity" }
+Number WeatherStation_Pressure              "Luftdruck [%.1f hPa]" <selfruntime> {channel="mqtt:topic:cloud:weatherstation:pressure" }
+Number WeatherStation_Solar_Power           "Sonnenkraft [%.1f Watt/m²]" <selfsun> {channel="mqtt:topic:cloud:weatherstation:solar_power" }
+Number WeatherStation_Light_Level           "Helligkeit [%d lux]" <selfsun> {channel="mqtt:topic:cloud:weatherstation:light_level" }
+Number WeatherStation_UV_Index              "UV Index [%.1f]" <selfsun> {channel="mqtt:topic:cloud:weatherstation:uv_index" }
+  
