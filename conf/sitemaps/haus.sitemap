@@ -56,6 +56,9 @@ sitemap default label="Main Menu"
 				Text item=Winter_Time		
 			}
 		}
+		Text label="Wetterbericht" icon="selfrain" {
+			Webview url="/weather/weatherDetailOverview.php" icon=none height=20
+		}
 		Text label="Wetter" icon="selfsun" {
 			Frame label="Wetter" {
 				Text item=WeatherStation_Temperature

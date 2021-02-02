@@ -1,4 +1,4 @@
-Bridge mqtt:broker:cloud [ host="mosquitto.cloud", secure=false ]
+Bridge mqtt:broker:cloud [ host="cloud_mosquitto", secure=false ]
 {
     Thing topic weatherstation "Wetterstation" @ "Geräte" {
         Type number : rain_current "rain current" [ stateTopic="hhees/pOutdoor_WeatherStation_Rain_Current" ]
@@ -22,7 +22,7 @@ Bridge mqtt:broker:mosquitto [ host="mosquitto", secure=false ]
     Thing topic device_ping "Device Ping" @ "Geräte" {
 {% for username in userdata %}
 {% if userdata[username].phone_device is defined %}
-        Type switch : phone_{{username}} "Device" [ stateTopic="/device_ping/phone_{{username}}" ]
+        Type switch : phone_{{username}} "Device" [ stateTopic="device_ping/phone_{{username}}" ]
 {% endif %}
 {% endfor %}
     }
